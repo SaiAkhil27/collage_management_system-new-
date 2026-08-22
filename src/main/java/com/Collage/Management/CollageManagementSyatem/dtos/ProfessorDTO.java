@@ -3,14 +3,14 @@ package com.Collage.Management.CollageManagementSyatem.dtos;
 import com.Collage.Management.CollageManagementSyatem.configs.Role;
 import com.Collage.Management.CollageManagementSyatem.entiites.StudentEntity;
 import com.Collage.Management.CollageManagementSyatem.entiites.SubjectEntity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 
 
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfessorDTO {
@@ -22,6 +22,9 @@ public class ProfessorDTO {
     private String address;
     private Role role;
     private String teachedSubs;
-    private Set<SubjectEntity> subjects;
-    private Set<StudentEntity> students;
+    private Set<Long> subjectsIds;
+    private Set<Long> studentsIds;
+
+
+
 }

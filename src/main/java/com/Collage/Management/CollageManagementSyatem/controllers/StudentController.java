@@ -1,6 +1,7 @@
 package com.Collage.Management.CollageManagementSyatem.controllers;
 
 import com.Collage.Management.CollageManagementSyatem.dtos.StudentDTO;
+import com.Collage.Management.CollageManagementSyatem.dtos.StudentWithSubjects;
 import com.Collage.Management.CollageManagementSyatem.entiites.StudentEntity;
 import com.Collage.Management.CollageManagementSyatem.services.StudentService;
 import com.Collage.Management.CollageManagementSyatem.services.StudentServiceInterface;
@@ -38,5 +39,9 @@ public class StudentController {
     private StudentDTO getSubjectsOfStudents(@PathVariable Long studentId,
                                                 @PathVariable Long subjectId){
         return studentServiceInterface.getSubjectsOfStudents(studentId,subjectId);
+    }
+    @GetMapping("/studentWithSubject/{studentId}")
+    private StudentWithSubjects studentWithSubjects(@PathVariable Long studentId){
+        return studentServiceInterface.getStudentWithSubject(studentId);
     }
 }

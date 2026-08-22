@@ -15,7 +15,7 @@ public class MarksController {
         this.marksServiceInterface = marksServiceInterface;
     }
 
-    @PostMapping("postMarks")
+    @PostMapping("/postMarks")
             private MarksDTO addMarks( @RequestBody MarksDTO dto)  {
 return marksServiceInterface.addMarksForSubjectToStudent(dto);
 

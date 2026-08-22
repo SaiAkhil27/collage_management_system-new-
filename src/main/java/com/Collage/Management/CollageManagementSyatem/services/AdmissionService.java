@@ -19,7 +19,7 @@ public class AdmissionService implements AdmissionServiceInterface {
     private final AdmissionRepository admissionRepository;
     private final StudentRepository studentRepository;
 
-    public AdmissionService(ModelMapper modelMapper,
+    private AdmissionService(ModelMapper modelMapper,
                             AdmissionRepository admissionRepository,
                             StudentRepository studentRepository) {
         this.modelMapper = modelMapper;

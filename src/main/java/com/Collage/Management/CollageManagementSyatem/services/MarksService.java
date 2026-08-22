@@ -52,8 +52,7 @@ public class MarksService implements MarksServiceInterface {
         marks.setStudent(student);
         marks.setSubject(subject);
         marks.setExam(exam);
-        marks.setMarks((long) dto.getMarks().intValue());
-
+        marks.setMarks(Math.toIntExact(dto.getMarks()));
         Marks saved = marksRepository.save(marks);
 
         MarksDTO result = new MarksDTO();
@@ -61,7 +60,7 @@ public class MarksService implements MarksServiceInterface {
         result.setStudent_id(student.getId());
         result.setSubject_id(subject.getId());
         result.setExam_id(exam.getId());
-        result.setMarks((long) saved.getMarks());
+        result.setMarks((int) saved.getMarks().longValue()); // ✅ converts Integer back to Long for DTO
         return result;
     }
 }

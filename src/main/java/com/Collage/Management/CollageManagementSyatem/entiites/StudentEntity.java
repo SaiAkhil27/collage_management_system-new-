@@ -68,6 +68,13 @@ public class StudentEntity {
     @LastModifiedBy
     private String personModified;
 
+    // Remove the ManyToMany standards we added before
+// Replace with this
+
+    @ManyToOne
+    @JoinColumn(name = "standard_id")
+    private Standard standard;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

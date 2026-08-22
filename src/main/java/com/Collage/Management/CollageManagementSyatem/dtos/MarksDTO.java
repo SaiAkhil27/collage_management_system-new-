@@ -11,6 +11,6 @@ public class MarksDTO {
     private Long id;
     private Long student_id;
     private Long subject_id;
-    private Long marks;   // kept as Long to match DTO contract; MarksService converts to Integer when saving
+    private Integer  marks;   // kept as Long to match DTO contract; MarksService converts to Integer when saving
     private Long exam_id;
 }

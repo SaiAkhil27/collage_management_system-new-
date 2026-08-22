@@ -20,8 +20,9 @@ public class StudentDTO {
     private String phone;
     private String address;
     private Role role;
-    private AdmissionEntity admittedStud;
-    private Set<ProfessorEntity> studentProfessor;
-    private Set<SubjectEntity> subjectsOfStudents;
+    private Long admissionId;
+    private Long standardId;
+    private Set<Long> professorIds;
+    private Set<Long> subjectIds;
 
 }

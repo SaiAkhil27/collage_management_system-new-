@@ -2,6 +2,7 @@ package com.Collage.Management.CollageManagementSyatem.controllers;
 
 
 import com.Collage.Management.CollageManagementSyatem.dtos.ProfessorDTO;
+import com.Collage.Management.CollageManagementSyatem.dtos.SubjectsProfesorThought;
 import com.Collage.Management.CollageManagementSyatem.services.ProfessorService;
 import com.Collage.Management.CollageManagementSyatem.services.ProfessorServiceInterface;
 import com.Collage.Management.CollageManagementSyatem.services.StudentProfessorServiceInterface;
@@ -56,6 +57,10 @@ public class ProfessorController {
         return professorServiceInterface.assignStudentsToProfessor(professorId,studentId);
     }
 
+    @GetMapping("/subjectsProfThought/{profId}")
+    private SubjectsProfesorThought subjectsProfesorThought(@PathVariable Long profId){
+        return professorServiceInterface.subjectsProfTought(profId);
+    }
 
 
 }

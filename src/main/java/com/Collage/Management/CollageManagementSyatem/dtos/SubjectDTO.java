@@ -16,6 +16,6 @@ public class SubjectDTO {
     private Long id;
     private String name;
     private SubjectType subjectType;
-    private ProfessorEntity professor;
-    private Set<StudentEntity> studentSubjects;
+    private Long professorId;
+    private Set<Long> studentIds;
 }

@@ -37,7 +37,6 @@ public class ExamService implements ExamServiceInterface {
     public Exam addExam(Exam exam) {
         return examRepository.save(exam);
     }
-
     @Override
     public Map<String, Integer> getMarksByStudent(Long examId, Long studentId) {
         examRepository.findById(examId)
@@ -53,7 +52,7 @@ public class ExamService implements ExamServiceInterface {
         Map<String, Integer> marksMap = new LinkedHashMap<>();
         for (Object[] row : results) {
             String subjectName = (String) row[0];
-            Integer mark = (Integer) row[1];
+            Integer mark = ((Number) row[1]).intValue();  // ✅ fixed
             marksMap.put(subjectName, mark);
         }
         return marksMap;
